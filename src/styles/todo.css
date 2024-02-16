@@ -1,1 +1,32 @@
+/* TODO FORM */
 
+.todo-form {
+  width: 80vw;
+  max-width: 640px;
+  margin: 20vh auto;
+  padding: 40px;
+
+  background-color: var(--first-color);
+  border-radius: 8px;
+
+  display: grid;
+  grid-template-columns: 3fr 1fr;
+  gap: 10px;
+}
+
+.todo-form input,
+.todo-form button {
+  padding: 12px;
+
+  border: 1px solid var(--second-color);
+  border-radius: 4px;
+  color: var(--last-color);
+}
+
+.todo-form .todo-input {
+  background-color: transparent;
+}
+
+.todo-form .todo-btn {
+  background-color: var(--second-color);
+}

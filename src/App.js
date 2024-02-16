@@ -3,7 +3,7 @@ import { TodoWrapper } from "./components/TodoWrapper";
 
 function App() {
   return (
-    <div>
+    <div className="app-section">
       <TodoWrapper />
     </div>
   );

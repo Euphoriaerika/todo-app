@@ -3,6 +3,11 @@
   gap: 40px;
 }
 
+.todo-wrapper h1 {
+  margin: 0;
+  text-align: center;
+}
+
 /* TODO FORM SECTION */
 
 .todo-form {
@@ -71,4 +76,9 @@
 
 .todo .todo-icons > * {
   cursor: pointer;
+}
+
+.completed {
+  opacity: 0.6;
+  text-decoration: line-through;
 }

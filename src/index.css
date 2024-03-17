@@ -3,6 +3,11 @@
   --second-color: #836fff;
   --third-color: #15f5ba;
   --last-color: #f0f3ff;
+
+  --second-color-1: #708bff;
+  --second-color-2: #b270ff;
+  --second-color-3: #70b8ff;
+  --second-color-4: #e170ff;
 }
 
 * {
@@ -20,20 +25,29 @@ body {
   color: var(--last-color);
 }
 
-.app-section {
-  width: 80vw;
-  max-width: 640px;
-  margin: 20vh auto;
-  padding: 40px;
+/* HEADER SECTION */
 
-  background-color: var(--first-color);
-  border-radius: 8px;
+header {
+  background-color: var(--second-color-4);
+  padding: 8px;
+
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
 }
 
-@media screen and (max-width: 500px) {
-  .app-section {
-    padding: 20px;
-  }
+.nav-btn {
+  background-color: transparent;
+  color: var(--last-color);
+
+  border-radius: 4px;
+
+  padding: 8px;
+
+  cursor: pointer;
+  text-decoration: none;
 }
 
-
+.nav-btn:hover {
+  background-color: var(--second-color-3);
+}

@@ -1,3 +1,21 @@
+.app-section {
+  width: 80vw;
+  max-width: 640px;
+  margin: 20vh auto;
+  padding: 40px;
+
+  background-color: var(--first-color);
+  border-radius: 8px;
+}
+
+@media screen and (max-width: 500px) {
+  .app-section {
+    padding: 20px;
+  }
+}
+
+/* TODO WRAPPER SECTION */
+
 .todo-wrapper {
   display: grid;
   gap: 40px;

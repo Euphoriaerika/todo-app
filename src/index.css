@@ -19,3 +19,13 @@ body {
   background-color: var(--second-color);
   color: var(--last-color);
 }
+
+.app-section {
+  width: 80vw;
+  max-width: 640px;
+  margin: 20vh auto;
+  padding: 40px;
+
+  background-color: var(--first-color);
+  border-radius: 8px;
+}

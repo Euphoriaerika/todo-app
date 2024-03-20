@@ -16,7 +16,7 @@ const Navbar = () => {
         <NavLink className="nav-btn nav-btnh" to="/todos">
           Todo List
         </NavLink>
-        <NavLink className="nav-btn nav-btnh" to="/work-timer">
+        <NavLink className="nav-btn nav-btnh" to="/timer">
           Work Timer
         </NavLink>
       </nav>

@@ -1,0 +1,27 @@
+.timer {
+  font-size: 5rem;
+  font-weight: bold;
+}
+
+.timer-btn-wrapper {
+  margin-top: 20px;
+
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  gap: 16px;
+}
+
+.timer-btn {
+  color: var(--last-color);
+  font-size: 48px;
+
+  background-color: transparent;
+  border: 0;
+  padding: 8px;
+
+  width: 60px;
+  height: 60px;
+
+  cursor: pointer;
+}

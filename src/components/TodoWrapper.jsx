@@ -3,7 +3,7 @@ import TodoForm from "./TodoForm";
 
 import { v4 as uuidv4 } from "uuid";
 import Todo from "./Todo";
-import EditTodoForm from "./EditTodoForm";
+import TodoFormEdit from "./TodoFormEdit";
 uuidv4();
 
 const TodoWrapper = () => {
@@ -57,7 +57,7 @@ const TodoWrapper = () => {
       <div className="todo-list">
         {todoList.map((todo) =>
           todo.isEditing ? (
-            <EditTodoForm editTodo={editTask} task={todo} />
+            <TodoFormEdit editTodo={editTask} task={todo} />
           ) : (
             <Todo
               task={todo}

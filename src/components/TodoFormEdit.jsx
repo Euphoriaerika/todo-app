@@ -1,6 +1,6 @@
 import { useState } from "react";
 
-const EditTodoForm = ({ editTodo, task }) => {
+const TodoFormEdit = ({ editTodo, task }) => {
   const [value, setValue] = useState(task.task);
 
   const handleSubmit = (e) => {
@@ -22,4 +22,4 @@ const EditTodoForm = ({ editTodo, task }) => {
   );
 };
 
-export default EditTodoForm;
+export default TodoFormEdit;

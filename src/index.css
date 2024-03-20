@@ -3,11 +3,6 @@
   --second-color: #836fff;
   --third-color: #15f5ba;
   --last-color: #f0f3ff;
-
-  --second-color-1: #708bff;
-  --second-color-2: #b270ff;
-  --second-color-3: #70b8ff;
-  --second-color-4: #e170ff;
 }
 
 * {
@@ -23,31 +18,4 @@ body {
   -moz-osx-font-smoothing: grayscale;
   background-color: var(--second-color);
   color: var(--last-color);
-}
-
-/* HEADER SECTION */
-
-header {
-  background-color: var(--second-color-4);
-  padding: 8px;
-
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-}
-
-.nav-btn {
-  background-color: transparent;
-  color: var(--last-color);
-
-  border-radius: 4px;
-
-  padding: 8px;
-
-  cursor: pointer;
-  text-decoration: none;
-}
-
-.nav-btn:hover {
-  background-color: var(--second-color-3);
 }

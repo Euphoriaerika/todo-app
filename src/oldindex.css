@@ -1,0 +1,172 @@
+.app-section {
+  width: 80vw;
+  max-width: 640px;
+  margin: 20vh auto;
+  padding: 40px;
+
+  background-color: var(--first-color);
+  border-radius: 8px;
+}
+
+@media screen and (max-width: 500px) {
+  .app-section {
+    padding: 20px;
+  }
+}
+
+.app-section h1 {
+  text-align: center;
+}
+
+/* HEADER SECTION */
+
+.nav-btn {
+  background-color: transparent;
+  color: var(--last-color);
+  border-radius: 4px;
+  padding: 8px;
+
+  cursor: pointer;
+  text-decoration: none;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 8px;
+}
+
+.nav-btnh:hover {
+  background-color: var(--second-color);
+}
+
+.circle-btn {
+  width: 36px;
+  height: 36px;
+  border-radius: 50%;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.circle-btn img {
+  width: 80%;
+  height: 80%;
+  object-fit: contain;
+}
+
+.logo {
+  font-weight: bold;
+  font-size: 20px;
+}
+
+.timer {
+  font-size: 5rem;
+  font-weight: bold;
+}
+
+.timer-btn-wrapper {
+  margin-top: 20px;
+
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  gap: 16px;
+}
+
+.timer-btn {
+  color: var(--last-color);
+  font-size: 48px;
+
+  background-color: transparent;
+  border: 0;
+  padding: 8px;
+
+  width: 60px;
+  height: 60px;
+
+  cursor: pointer;
+}
+
+/* TODO WRAPPER SECTION */
+
+.todo-wrapper {
+  display: grid;
+  gap: 40px;
+}
+
+/* TODO FORM SECTION */
+
+.todo-form {
+  display: grid;
+  grid-template-columns: 3fr 1fr;
+}
+
+.todo-form input,
+.todo-form button {
+  padding: 12px;
+
+  border: 1px solid var(--second-color);
+  color: var(--last-color);
+}
+
+.todo-form input {
+  border-radius: 4px 0 0 4px;
+  background-color: transparent;
+}
+
+.todo-form button {
+  cursor: pointer;
+
+  border-radius: 0 4px 4px 0;
+  background-color: var(--second-color);
+}
+
+.todo-form button:hover {
+  background-color: var(--last-color);
+  color: var(--first-color);
+}
+
+/* TODO LIST SECTION */
+
+.todo-list {
+  display: grid;
+  gap: 20px;
+}
+
+.todo {
+  display: grid;
+  grid-template-columns: 3fr 1fr;
+
+  background-color: var(--second-color);
+  border-radius: 4px;
+}
+
+.todo > * {
+  margin: 0;
+  padding: 12px;
+}
+
+.todo p {
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  user-select: none;
+}
+
+.todo .todo-icons {
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+  gap: 16px;
+}
+
+.todo .todo-icons > * {
+  cursor: pointer;
+}
+
+.completed {
+  opacity: 0.6;
+  text-decoration: line-through;
+}
+

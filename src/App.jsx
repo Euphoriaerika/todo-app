@@ -1,14 +1,21 @@
+import { useState } from "react";
 import { Route, BrowserRouter as Router, Routes } from "react-router-dom";
-import Navbar from "./components/Navbar";
+import Header from "./components/Header";
+import Sidebar from "./components/Sidebar";
 import { Home, TodoList, Timer, Profile } from "./pages";
 
-// Main component representing the entire application
 const App = () => {
+  const [isSidebarOpen, setIsSidebarOpen] = useState(false);
+
+  const toggleSidebar = () => {
+    setIsSidebarOpen(!isSidebarOpen);
+  };
+
   return (
-    <main>
-      {/* Router component to handle navigation */}
-      <Router>
-        <Navbar />
+    <Router>
+      <Header toggleSidebar={toggleSidebar} />
+      <main>
+        <Sidebar isOpen={isSidebarOpen} />
         {/* Routes component to define different pages and their corresponding components */}
         <Routes>
           <Route path="/" element={<Home />} />
@@ -16,8 +23,8 @@ const App = () => {
           <Route path="/timer" element={<Timer />} />
           <Route path="/profile" element={<Profile />} />
         </Routes>
-      </Router>
-    </main>
+      </main>
+    </Router>
   );
 };
 

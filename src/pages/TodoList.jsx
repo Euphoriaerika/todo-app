@@ -1,5 +1,4 @@
-import TodoWrapper from "../components/TodoWrapper";
-import "../styles/todo.css";
+import TodoWrapper from "../services/todo/TodoWrapper";
 
 const TodoList = () => {
   return (

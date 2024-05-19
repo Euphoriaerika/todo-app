@@ -1,4 +1,4 @@
-import TimerWrapper from "../components/TimerWrapper";
+import TimerWrapper from "../services/timerWork/TimerWrapper";
 
 const Timer = () => {
   return (

@@ -20,7 +20,7 @@ const Sidebar = ({ isOpen, toggleSidebar }) => {
       <div className={`sidebar ${isOpen ? "open" : ""}`}>
         {/* A list of navigation links */}
         <ul className="list">
-          <p className="p-h-12 border-b-1">Work utils</p>
+          <p className="p-h-12 border-b-1-grey">Work utils</p>
           {links.map((link, index) => (
             <li
               className="flex flex-start hover-grey"

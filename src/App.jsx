@@ -21,7 +21,7 @@ const App = () => {
   return (
     <Router>
       <Header toggleSidebar={toggleSidebar} />
-      <main>
+      <main className="indented-header">
         <Sidebar isOpen={isSidebarOpen} toggleSidebar={toggleSidebar} />
         {/* Routes component to define different pages and their corresponding components */}
         <Routes>

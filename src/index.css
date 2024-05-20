@@ -99,7 +99,37 @@ header {
   height: 44px;
 }
 
+.indented-header {
+  padding-top: 48px;
+}
+
 /*================== End Components =================*/
+
+/*================== Todo List Components ================= */
+
+.todo {
+  display: grid;
+  grid-template-columns: 2fr 40px 40px 1fr 1fr;
+}
+
+.todo > * {
+  border: 1px solid var(--last-color);
+
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  user-select: none;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.todo .title {
+  width: calc(50vw - 80px);
+}
+
+/*================== End Todo List Components ================= */
 
 .circle-32 {
   width: 32px;
@@ -141,6 +171,14 @@ header {
   align-items: center;
 }
 
+.tetx-center {
+  text-align: center;
+}
+
+.text-start {
+  text-align: start;
+}
+
 .space-between {
   justify-content: space-between;
 }
@@ -150,8 +188,16 @@ header {
   height: 100%;
 }
 
+.p-12 {
+  padding: 12px;
+}
+
 .p-h-12 {
   padding: 0 12px;
+}
+
+.m-v-12 {
+  margin: 12px 0;
 }
 
 .gap-12 {
@@ -166,11 +212,35 @@ header {
   cursor: pointer;
 }
 
-.border-b-1 {
+.border-b-1-grey {
   border-bottom: 2px solid #e0e0e0;
 }
 
+.border-1{
+  border: 1px solid var(--last-color);
+}
+
+.h-40 {
+  height: 40px;
+}
+
+.test {
+  max-width: 100%;
+}
+
 /*================== Custom color =================*/
+
+.soft-red {
+  background-color: #f28585;
+}
+
+.soft-orange {
+  background-color: #ffa447;
+}
+
+.soft-green {
+  background-color: #b7e5b4;
+}
 
 .col-neon-violet {
   background: linear-gradient(

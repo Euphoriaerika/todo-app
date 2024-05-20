@@ -8,29 +8,26 @@ const Todo = ({ task, toggleComplite, deleteTodo, editTodo }) => {
       <div className="flex-start p-h-12">
         <p className="title">{task.task}</p>
       </div>
-      <div>
-        <FontAwesomeIcon
-          icon={faPenToSquare}
-          onClick={() => editTodo(task.id)}
-        />
+      <div className="pointer" onClick={() => editTodo(task.id)}>
+        <FontAwesomeIcon icon={faPenToSquare} />
       </div>
-      <div>
-        <FontAwesomeIcon icon={faTrash} onClick={() => deleteTodo(task.id)} />
+      <div className="pointer" onClick={() => deleteTodo(task.id)}>
+        <FontAwesomeIcon icon={faTrash} />
       </div>
       <div
-        className={task.completed ? "soft-green" : "soft-red"}
+        className={`pointer ${task.completed ? "soft-green" : "soft-red"}`}
         onClick={() => toggleComplite(task.id)}
       >
         <p>{task.completed ? "Completed" : "Not completed"}</p>
       </div>
       <div
-        className={
+        className={`pointer ${
           task.priority === "Low"
             ? "soft-green"
             : task.priority === "Medium"
             ? "soft-orange"
             : "soft-red"
-        }
+        }`}
       >
         <p>{task.priority}</p>
       </div>

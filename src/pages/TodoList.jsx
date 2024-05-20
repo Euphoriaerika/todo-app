@@ -16,7 +16,7 @@ const TodoList = () => {
         id: uuidv4(),
         task: todo,
         completed: false,
-        priority: "Medium",
+        priority: "Low",
         isEditing: false,
       },
     ]);
@@ -59,7 +59,7 @@ const TodoList = () => {
     <div className="p-12">
       <h1 className="border-b-1-grey">Table Name</h1>
 
-      <div className="border-1 m-v-12">
+      <div className="border-1 m-v-12 ws-50">
         {todoList.map((todo) =>
           todo.isEditing ? (
             <TodoFormEdit editTodo={editTask} task={todo} />

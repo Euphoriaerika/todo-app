@@ -5,6 +5,21 @@
   --last-color: #1a1c20;
 }
 
+/* Стиль для всього сайту */
+* {
+  scrollbar-width: thin;
+  scrollbar-color: #888 transparent;
+}
+
+::-webkit-scrollbar {
+  width: 2px;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #888;
+  border-radius: 10px;
+}
+
 * {
   box-sizing: border-box;
   margin: 0;
@@ -15,6 +30,7 @@ body,
 html {
   min-height: 100vh;
   width: 100vw;
+  overflow-x: hidden;
 }
 
 body {
@@ -30,6 +46,17 @@ body {
 a {
   text-decoration: none;
   color: var(--last-color);
+}
+
+button{
+  border: 0;
+  background-color: transparent;
+  cursor: pointer
+}
+
+input {
+  border: 0;
+  background-color: transparent;
 }
 
 /*================== Components =================*/
@@ -115,20 +142,21 @@ header {
 .todo > * {
   border: 1px solid var(--last-color);
 
-  white-space: nowrap;
-  overflow: hidden;
-  text-overflow: ellipsis;
-  user-select: none;
-
   display: flex;
   justify-content: center;
   align-items: center;
 }
 
-.todo .title {
-  width: calc(50vw - 80px);
+.todo p {
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  user-select: none;
 }
 
+.title {
+  width: calc(25vw - 80px);
+}
 /*================== End Todo List Components ================= */
 
 .circle-32 {
@@ -183,11 +211,6 @@ header {
   justify-content: space-between;
 }
 
-.full-size {
-  width: 100%;
-  height: 100%;
-}
-
 .p-12 {
   padding: 12px;
 }
@@ -216,16 +239,25 @@ header {
   border-bottom: 2px solid #e0e0e0;
 }
 
-.border-1{
+.border-1 {
   border: 1px solid var(--last-color);
+}
+
+.full-size {
+  width: 100%;
+  height: 100%;
+}
+
+.ws-50 {
+  width: 50%;
+}
+
+.ws-100{
+  width: 100%;
 }
 
 .h-40 {
   height: 40px;
-}
-
-.test {
-  max-width: 100%;
 }
 
 /*================== Custom color =================*/

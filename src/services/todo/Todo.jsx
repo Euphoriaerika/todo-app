@@ -2,23 +2,23 @@ import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faPenToSquare } from "@fortawesome/free-regular-svg-icons";
 import { faTrash } from "@fortawesome/free-solid-svg-icons";
 
-const Todo = ({ task, toggleComplite, deleteTodo, editTodo, changePriority }) => {
+const Todo = ({ task, toggleComplete, deleteTodo, editTodo, changePriority }) => {
   return (
     <div className="todo h-40">
       <div className="flex-start p-h-12">
-        <p className="title">{task.task}</p>
+        <p className="title">{task.title}</p>
       </div>
-      <div className="pointer" onClick={() => editTodo(task.id)}>
+      <div className="pointer" onClick={() => editTodo(task._id)}>
         <FontAwesomeIcon icon={faPenToSquare} />
       </div>
-      <div className="pointer" onClick={() => deleteTodo(task.id)}>
+      <div className="pointer" onClick={() => deleteTodo(task._id)}>
         <FontAwesomeIcon icon={faTrash} />
       </div>
       <div
-        className={`pointer ${task.completed ? "soft-green" : "soft-red"}`}
-        onClick={() => toggleComplite(task.id)}
+        className={`pointer ${task.status ? "soft-green" : "soft-red"}`}
+        onClick={() => toggleComplete(task._id)}
       >
-        <p>{task.completed ? "Completed" : "Not completed"}</p>
+        <p>{task.status ? "Completed" : "Not completed"}</p>
       </div>
       <div
         className={`pointer ${
@@ -31,7 +31,7 @@ const Todo = ({ task, toggleComplite, deleteTodo, editTodo, changePriority }) =>
       >
         <select
           value={task.priority}
-          onChange={(e) => changePriority(e.target.value, task.id)}
+          onChange={(e) => changePriority(e.target.value, task._id)}
         >
           <option value="Low">Low</option>
           <option value="Medium">Medium</option>

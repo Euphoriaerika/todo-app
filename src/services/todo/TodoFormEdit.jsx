@@ -1,18 +1,24 @@
-import { useState, useEffect } from "react";
+import { useState } from "react";
 import { arrowright } from "../../assets/icons";
+import { updateTask } from "../../api";
 
 const TodoFormEdit = ({ editTodo, task }) => {
-  const [value, setValue] = useState(task.task);
+  const [value, setValue] = useState(task.title);
 
-  const handleSubmit = (e) => {
+  const handleSubmit = async (e) => {
     e.preventDefault();
-    editTodo(value, task.id);
-    setValue("");
+    try {
+      await updateTask(task._id, { title: value });
+      editTodo(value, task._id);
+      setValue("");
+    } catch (error) {
+      console.error("Error updating task:", error);
+    }
   };
 
   const handleBlur = (e) => {
     if (e.relatedTarget?.type !== "submit") {
-      editTodo(task.task, task.id);
+      editTodo(task.title, task._id);
       setValue("");
     }
   };
@@ -29,7 +35,7 @@ const TodoFormEdit = ({ editTodo, task }) => {
         autoFocus
       />
       <button className="box-40" type="submit">
-        <img className="full-size" src={arrowright} />
+        <img className="full-size" src={arrowright} alt="Submit" />
       </button>
     </form>
   );

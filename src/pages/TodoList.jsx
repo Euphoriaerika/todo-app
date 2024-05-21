@@ -1,81 +1,79 @@
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import TodoForm from "../services/todo/TodoForm";
-
-import { v4 as uuidv4 } from "uuid";
 import Todo from "../services/todo/Todo";
 import TodoFormEdit from "../services/todo/TodoFormEdit";
-uuidv4();
+import { getTasks, addTask, updateTask, deleteTask } from "../api";
 
 const TodoList = () => {
   const [todoList, setTodoList] = useState([]);
 
-  const addTodo = (todo) => {
-    setTodoList([
-      ...todoList,
-      {
-        id: uuidv4(),
-        task: todo,
-        completed: false,
-        priority: "Medium",
-        isEditing: false,
-      },
-    ]);
+  useEffect(() => {
+    const fetchTasks = async () => {
+      const response = await getTasks();
+      setTodoList(response.data);
+    };
+    fetchTasks();
+  }, []);
+
+  const addTodo = async (todo) => {
+    const newTask = {
+      title: todo,
+      status: false,
+      priority: "Medium",
+    };
+    const response = await addTask(newTask);
+    setTodoList([...todoList, response.data]);
   };
 
-  const toggleComplite = (id) => {
-    setTodoList(
-      todoList.map((todo) =>
-        todo.id === id
-          ? {
-              ...todo,
-              completed: !todo.completed,
-            }
-          : todo
-      )
-    );
+  const toggleComplete = async (id) => {
+    const todo = todoList.find((t) => t._id === id);
+    const updatedTask = { ...todo, status: !todo.status };
+    const response = await updateTask(id, updatedTask);
+    setTodoList(todoList.map((t) => (t._id === id ? response.data : t)));
   };
 
-  const deleteTodo = (id) => {
-    setTodoList(todoList.filter((todo) => todo.id !== id));
+  const deleteTodo = async (id) => {
+    await deleteTask(id);
+    setTodoList(todoList.filter((todo) => todo._id !== id));
   };
 
   const editTodo = (id) => {
     setTodoList(
       todoList.map((todo) =>
-        todo.id === id ? { ...todo, isEditing: !todo.isEditing } : todo
+        todo._id === id ? { ...todo, isEditing: !todo.isEditing } : todo
       )
     );
   };
 
-  const editTask = (task, id) => {
+  const editTask = async (task, id) => {
+    const updatedTask = { ...task, isEditing: false };
+    const response = await updateTask(id, updatedTask);
     setTodoList(
-      todoList.map((todo) =>
-        todo.id === id ? { ...todo, task, isEditing: !todo.isEditing } : todo
-      )
+      todoList.map((todo) => (todo._id === id ? response.data : todo))
     );
   };
 
-  const changePriority = (priority, id) => {
+  const changePriority = async (priority, id) => {
+    const todo = todoList.find((t) => t._id === id);
+    const updatedTask = { ...todo, priority };
+    const response = await updateTask(id, updatedTask);
     setTodoList(
-      todoList.map((todo) =>
-        todo.id === id ? { ...todo, priority } : todo
-      )
+      todoList.map((todo) => (todo._id === id ? response.data : todo))
     );
   };
 
   return (
     <div className="p-12">
       <h1 className="border-b-1-grey">Table Name</h1>
-
       <div className="border-1 m-v-12 ws-50">
         {todoList.map((todo) =>
           todo.isEditing ? (
-            <TodoFormEdit editTodo={editTask} task={todo} />
+            <TodoFormEdit key={todo._id} editTodo={editTask} task={todo} />
           ) : (
             <Todo
+              key={todo._id}
               task={todo}
-              key={todo.id}
-              toggleComplite={toggleComplite}
+              toggleComplete={toggleComplete}
               deleteTodo={deleteTodo}
               editTodo={editTodo}
               changePriority={changePriority}

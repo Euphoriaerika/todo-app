@@ -30,12 +30,13 @@ const Todo = ({ task, toggleComplete, deleteTodo, editTodo, changePriority }) =>
         }`}
       >
         <select
+          className="full-size"
           value={task.priority}
           onChange={(e) => changePriority(e.target.value, task._id)}
         >
-          <option value="Low">Low</option>
-          <option value="Medium">Medium</option>
-          <option value="High">High</option>
+          <option className="soft-green" value="Low">Low</option>
+          <option className="soft-orange" value="Medium">Medium</option>
+          <option className="soft-red" value="High">High</option>
         </select>
       </div>
     </div>

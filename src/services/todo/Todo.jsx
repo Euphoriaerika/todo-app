@@ -2,7 +2,7 @@ import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faPenToSquare } from "@fortawesome/free-regular-svg-icons";
 import { faTrash } from "@fortawesome/free-solid-svg-icons";
 
-const Todo = ({ task, toggleComplite, deleteTodo, editTodo }) => {
+const Todo = ({ task, toggleComplite, deleteTodo, editTodo, changePriority }) => {
   return (
     <div className="todo h-40">
       <div className="flex-start p-h-12">
@@ -29,7 +29,14 @@ const Todo = ({ task, toggleComplite, deleteTodo, editTodo }) => {
             : "soft-red"
         }`}
       >
-        <p>{task.priority}</p>
+        <select
+          value={task.priority}
+          onChange={(e) => changePriority(e.target.value, task.id)}
+        >
+          <option value="Low">Low</option>
+          <option value="Medium">Medium</option>
+          <option value="High">High</option>
+        </select>
       </div>
     </div>
   );

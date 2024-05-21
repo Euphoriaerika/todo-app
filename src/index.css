@@ -28,8 +28,6 @@
 
 body,
 html {
-  min-height: 100vh;
-  width: 100vw;
   overflow-x: hidden;
 }
 
@@ -48,16 +46,37 @@ a {
   color: var(--last-color);
 }
 
-button{
+button {
   border: 0;
   background-color: transparent;
-  cursor: pointer
+  cursor: pointer;
+  user-select: none;
 }
 
 input {
   border: 0;
   background-color: transparent;
 }
+
+select {
+  appearance: none;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  
+  border: none;
+
+  background-color: transparent;
+}
+
+select:focus {
+  outline: none;
+}
+
+option{
+  border-radius: 0;
+}
+
+
 
 /*================== Components =================*/
 
@@ -252,7 +271,7 @@ header {
   width: 50%;
 }
 
-.ws-100{
+.ws-100 {
   width: 100%;
 }
 

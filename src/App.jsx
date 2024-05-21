@@ -4,11 +4,6 @@ import Header from "./components/Header";
 import Sidebar from "./components/Sidebar";
 import { Home, TodoList, Timer, Profile } from "./pages";
 
-/**
- * The App component, which renders the main content of the application.
- *
- * @returns {ReactElement} - The JSX representation of the App component.
- */
 const App = () => {
   // A state variable to track whether the sidebar is currently open or not.
   const [isSidebarOpen, setIsSidebarOpen] = useState(false);

@@ -16,7 +16,7 @@ const TodoList = () => {
         id: uuidv4(),
         task: todo,
         completed: false,
-        priority: "Low",
+        priority: "Medium",
         isEditing: false,
       },
     ]);
@@ -55,6 +55,14 @@ const TodoList = () => {
     );
   };
 
+  const changePriority = (priority, id) => {
+    setTodoList(
+      todoList.map((todo) =>
+        todo.id === id ? { ...todo, priority } : todo
+      )
+    );
+  };
+
   return (
     <div className="p-12">
       <h1 className="border-b-1-grey">Table Name</h1>
@@ -70,6 +78,7 @@ const TodoList = () => {
               toggleComplite={toggleComplite}
               deleteTodo={deleteTodo}
               editTodo={editTodo}
+              changePriority={changePriority}
             />
           )
         )}
